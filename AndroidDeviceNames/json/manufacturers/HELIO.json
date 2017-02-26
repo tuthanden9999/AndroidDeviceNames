@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Helio",
+  "devices": [
+    {
+      "market_name": "S2",
+      "codename": "WBL7519SY",
+      "model": "S2"
+    },
+    {
+      "market_name": "S25",
+      "codename": "HelioS25",
+      "model": "S25"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "manufacturer": "Trimble Navigation",
+  "devices": [
+    {
+      "market_name": "MM50",
+      "codename": "EE773X_4G",
+      "model": "MobileMapper50_4G"
+    },
+    {
+      "market_name": "MM50",
+      "codename": "EE773X_4G",
+      "model": "TDC100_4G"
+    },
+    {
+      "market_name": "MM50",
+      "codename": "EE773X_WiFi",
+      "model": "MobileMapper50_WiFi"
+    },
+    {
+      "market_name": "MM50",
+      "codename": "EE773X_WiFi",
+      "model": "TDC100_WiFi"
+    },
+    {
+      "market_name": "PeopleNet ConnectedTablet",
+      "codename": "MS5",
+      "model": "MS5"
+    },
+    {
+      "market_name": "TDC500 Handheld",
+      "codename": "workhorse",
+      "model": "TDC500"
+    },
+    {
+      "market_name": "TDI 600",
+      "codename": "ulmo_pro",
+      "model": "TDI 600"
+    },
+    {
+      "market_name": "Trimble ConnectedTablet",
+      "codename": "MS5",
+      "model": "MS5"
+    }
+  ]
+}

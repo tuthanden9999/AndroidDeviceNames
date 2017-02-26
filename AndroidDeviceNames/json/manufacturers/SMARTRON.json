@@ -1,0 +1,10 @@
+{
+  "manufacturer": "Smartron",
+  "devices": [
+    {
+      "market_name": "tphone",
+      "codename": "rimo01a",
+      "model": "T5511"
+    }
+  ]
+}

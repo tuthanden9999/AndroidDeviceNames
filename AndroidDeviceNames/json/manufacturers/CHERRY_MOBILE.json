@@ -1,0 +1,115 @@
+{
+  "manufacturer": "Cherry Mobile",
+  "devices": [
+    {
+      "market_name": "Cherry W900 LTE",
+      "codename": "al7",
+      "model": "W900 LTE"
+    },
+    {
+      "market_name": "FB100",
+      "codename": "FB100",
+      "model": "FB100"
+    },
+    {
+      "market_name": "Flare 5",
+      "codename": "X630",
+      "model": "Flare_5"
+    },
+    {
+      "market_name": "Flare A1",
+      "codename": "FlareA1",
+      "model": "FlareA1"
+    },
+    {
+      "market_name": "Flare J2S",
+      "codename": "Flare_J2S",
+      "model": "Flare J2S"
+    },
+    {
+      "market_name": "Flare J3",
+      "codename": "FlareJ3",
+      "model": "FlareJ3"
+    },
+    {
+      "market_name": "Flare J3",
+      "codename": "H680",
+      "model": "Flare_J3"
+    },
+    {
+      "market_name": "Flare J3 Plus",
+      "codename": "FlareJ3Plus",
+      "model": "FlareJ3Plus"
+    },
+    {
+      "market_name": "Flare J3 Plus",
+      "codename": "H620",
+      "model": "Flare_J3_Plus"
+    },
+    {
+      "market_name": "Flare J7",
+      "codename": "Flare_J7",
+      "model": "Flare J7"
+    },
+    {
+      "market_name": "Flare S5",
+      "codename": "Flare_S5",
+      "model": "Flare S5"
+    },
+    {
+      "market_name": "Flare S5 Lite DTV",
+      "codename": "FlareS5LiteDTV",
+      "model": "FlareS5LiteDTV"
+    },
+    {
+      "market_name": "Flare S5 Max",
+      "codename": "FLARE_S5_MAX",
+      "model": "FLARE S5 MAX"
+    },
+    {
+      "market_name": "Flare S5 Plus",
+      "codename": "Flare_S5_Plus",
+      "model": "Flare S5 Plus"
+    },
+    {
+      "market_name": "Flare X",
+      "codename": "Flare_X",
+      "model": "Flare_X_V2"
+    },
+    {
+      "market_name": "H220",
+      "codename": "ctih220_sprout",
+      "model": "H220"
+    },
+    {
+      "market_name": "Iris",
+      "codename": "Iris",
+      "model": "iris"
+    },
+    {
+      "market_name": "Omega HD 3S",
+      "codename": "H115",
+      "model": "OMEGA HD 3S"
+    },
+    {
+      "market_name": "Omega HD3",
+      "codename": "H110",
+      "model": "Omega HD 3"
+    },
+    {
+      "market_name": "One",
+      "codename": "H940_sprout",
+      "model": "H940"
+    },
+    {
+      "market_name": "Spin Max",
+      "codename": "H650",
+      "model": "Spin Max"
+    },
+    {
+      "market_name": "Touch HD",
+      "codename": "Touch_HD",
+      "model": "Cherry_Mobile_Touch_HD"
+    }
+  ]
+}
