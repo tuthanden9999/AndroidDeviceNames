@@ -11,13 +11,79 @@
     tools:context="auto.first.blood.changedevice.MainActivity">
 
     <Button
-        android:text="@string/change_device_btn_str"
+        android:id="@+id/changeDeviceBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/changeDeviceBtn"
-        android:onClick="changeDeviceBtn_onClick"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:elevation="0dp" />
+        android:onClick="changeDeviceBtn_onClick"
+        android:text="@string/change_device_btn_str" />
+
+    <TextView
+        android:id="@+id/wipeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/changeDeviceBtn"
+        android:layout_marginTop="5dp"
+        android:text="@string/wipeLabel" />
+
+    <Spinner
+        android:id="@+id/wipeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/wipeTextView"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/selectedWipeAppsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/wipeSpinner"
+        android:layout_marginTop="5dp"
+        android:background="?attr/colorControlHighlight"
+        android:maxLines="100"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/wipeDefaultBtn"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/wipeDefaultBtnLabel"
+        android:textSize="12sp"
+        android:onClick="wipeDefaultBtn_onClick"
+        android:layout_below="@+id/selectedWipeAppsTextView"
+        android:layout_toRightOf="@+id/wipeSaveBtn"
+        android:layout_toEndOf="@+id/wipeSaveBtn" />
+
+    <Button
+        android:id="@+id/wipeSaveBtn"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/wipeSaveBtnLabel"
+        android:textSize="12sp"
+        android:layout_below="@+id/selectedWipeAppsTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="wipeSaveBtn_onClick"/>
+
+    <Button
+        android:id="@+id/wipeClearBtn"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/wipeClearBtnLabel"
+        android:textSize="12sp"
+        android:onClick="wipeClearBtn_onClick"
+        android:layout_below="@+id/selectedWipeAppsTextView"
+        android:layout_toRightOf="@+id/wipeDefaultBtn"
+        android:layout_toEndOf="@+id/wipeDefaultBtn" />
+
 </RelativeLayout>

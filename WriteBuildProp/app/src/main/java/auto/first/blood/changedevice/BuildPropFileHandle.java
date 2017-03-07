@@ -48,51 +48,6 @@ public class BuildPropFileHandle {
 
         readBuildPropFile();
 
-//        //Better RAM managment
-//        prop.setProperty("ro.HOME_APP_ADJ", "1");
-//        //Disables built-in error reporting.
-//        prop.setProperty("profiler.force_disable_err_rpt", "1");
-//        prop.setProperty("profiler.force_disable_ulog", "1");
-//        //Better net speeds
-//        prop.setProperty("net.tcp.buffersize.default", "4096,87380,256960,4096,16384,256960");
-//        prop.setProperty("net.tcp.buffersize.wifi", "4096,87380,256960,4096,16384,256960");
-//        prop.setProperty("net.tcp.buffersize.umts", "4096,87380,256960,4096,16384,256960");
-//        prop.setProperty("net.tcp.buffersize.gprs", "4096,87380,256960,4096,16384,256960");
-//        prop.setProperty("net.tcp.buffersize.edge", "4096,87380,256960,4096,16384,256960");
-//        //Disables logcat
-//        prop.setProperty("logcat.live", "disable");
-//        //Support for ipv4 and ipv6
-//        prop.setProperty("persist.telephony.support.ipv6", "1");
-//        prop.setProperty("persist.telephony.support.ipv4", "1");
-//
-//        //Disables error checking
-//        prop.setProperty("ro.kernel.android.checkjni", "0");
-//        prop.setProperty("ro.kernel.checkjni", "0");
-//        //Dalvik Virtual Machine tweaks
-//        prop.setProperty("dalvik.vm.checkjni", "false");
-//        prop.setProperty("dalvik.vm.dexopt-data-only", "1");
-//        prop.setProperty("dalvik.vm.heapstartsize", "5m");
-//        prop.setProperty("dalvik.vm.heapgrowthlimit", "48m");
-//        prop.setProperty("dalvik.vm.heapsize", "64m");
-//        prop.setProperty("dalvik.vm.verify-bytecode", "false");
-//        prop.setProperty("dalvik.vm.execution-mode", "int:jit");
-//        prop.setProperty("dalvik.vm.lockprof.threshold", "250");
-//        prop.setProperty("dalvik.vm.dexopt-flags", "m=v,o=y");
-//        prop.setProperty("dalvik.vm.stack-trace-file", "/data/anr/traces.txt");
-//        prop.setProperty("dalvik.vm.jmiopts", "forcecopy");
-//        // Disables locating. Also delete /system/app/networklocation.apk and /system/
-//        prop.setProperty("framework/com.android.location.provider.jar", "");
-//        prop.setProperty("ro.com.google.locationfeatures", "0");
-//        prop.setProperty("ro.com.google.networklocation", "0");
-//        //Disables sending of usage data
-//        prop.setProperty("ro.config.nocheckin", "1");
-//        //Disable notification while adb is active
-//        prop.setProperty("persist.adb.notify", "0");
-//        //build.prop tweaks for improved performance
-//        prop.setProperty("debug.performance.tuning", "1");
-//        // Disable strict mode checking.
-//        prop.setProperty("persist.android.strictmode", "0");
-
         //Faster boot
         prop.setProperty("ro.config.hw_quickpoweron", "true");
 
@@ -117,11 +72,6 @@ public class BuildPropFileHandle {
 
         prop.setProperty("ro.build.fingerprint", device.getBuildFingerPrint());
         prop.setProperty("ro.build.description", device.getBuildDescription());
-
-//        prop.setProperty("ro.telephony.default_network", "3");
-//        prop.setProperty("ro.gsm.imei", "356871045027780");
-//        prop.setProperty("ro.serialno", "SH196V201237");
-//        prop.setProperty("net.hostname", "android-cd9f3782d41a0d81");
 
         try {
             FileOutputStream out = new FileOutputStream(new File(tempFile));
@@ -220,7 +170,7 @@ public class BuildPropFileHandle {
             }
         }
 
-        Log.d("WBP", "Edit saved and a backup was made at " + Environment.getExternalStorageDirectory().getAbsolutePath() + ".bluestacks.prop.bak");
+        Log.d("WBP", "Edit saved and a backup was made at " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + ".bluestacks.prop.bak");
     }
 
 //    public void backup() {

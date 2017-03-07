@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Change device first blood</string>
     <string name="change_device_btn_str">Change device</string>
+    
+    <string name="wipeLabel">Wipe apps</string>
+    <string name="wipeSaveBtnLabel">Save</string>
+    <string name="wipeDefaultBtnLabel">Default</string>
+    <string name="wipeClearBtnLabel">Clear</string>
+
+    <string name="uninstallLabel">Uninstall apps</string>
+    <string name="uninstallSaveBtnLabel">Save</string>
+    <string name="uninstallDefaultBtnLabel">Default</string>
+    <string name="uninstallClearBtnLabel">Clear</string>
 </resources>
