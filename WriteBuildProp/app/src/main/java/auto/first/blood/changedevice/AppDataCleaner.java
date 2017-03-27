@@ -1,7 +1,9 @@
 package auto.first.blood.changedevice;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
@@ -59,5 +61,11 @@ public class AppDataCleaner{
                 Log.e("WBP", "Clear data 2 fail: " + e.getMessage());
             }
         }
+    }
+
+    public void uninstallApplicationByPackageName(Context context, String packageName) {
+        Intent intent = new Intent(Intent.ACTION_DELETE);
+        intent.setData(Uri.parse("package:" + packageName));
+        context.startActivity(intent);
     }
 }

@@ -1,6 +1,8 @@
 package auto.first.blood.changedevice;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
@@ -14,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Properties;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2/25/2017.
@@ -44,23 +47,22 @@ public class BuildPropFileHandle {
         return prop.toString();
     }
 
-    public void writeBuildPropFile(Context context, int resRawFileId) {
+    public void writeBuildPropFile(Device device) {
 
         readBuildPropFile();
 
         //Faster boot
-        prop.setProperty("ro.config.hw_quickpoweron", "true");
+        //prop.setProperty("ro.config.hw_quickpoweron", "true");
 
         //change device here
-        SupportedDevices supportedDevices = new SupportedDevices();
-        Device device = supportedDevices.getRandomDeviceFromSupportedDevices(context, resRawFileId);
-        prop.setProperty("ro.product.model", device.getDeviceModel());
-        prop.setProperty("ro.product.device", device.getDeviceName());
-        prop.setProperty("ro.product.brand", device.getDeviceBrand());
-        prop.setProperty("ro.product.name", device.getDeviceName());
-        prop.setProperty("ro.product.manufacturer", device.getDeviceBrand());
+//        Device device = new Device();
+        prop.setProperty("ro.product.model", device.getDeviceName().deviceModel);
+        prop.setProperty("ro.product.device", device.getDeviceName().deviceName);
+        prop.setProperty("ro.product.brand", device.getDeviceName().deviceBrand);
+        prop.setProperty("ro.product.name", device.getDeviceName().deviceName);
+        prop.setProperty("ro.product.manufacturer", device.getDeviceName().deviceBrand);
         prop.setProperty("ro.product.locale.region", "en-US");
-        prop.setProperty("ro.build.product", device.getDeviceName());
+        prop.setProperty("ro.build.product", device.getDeviceName().deviceName);
 
         prop.setProperty("ro.build.id", device.getAndroidVersion().buildId);
         prop.setProperty("ro.build.display.id", device.getAndroidVersion().buildId + "." + device.getAndroidVersion().versionIncremental);
@@ -172,90 +174,4 @@ public class BuildPropFileHandle {
 
         Log.d("WBP", "Edit saved and a backup was made at " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + ".bluestacks.prop.bak");
     }
-
-//    public void backup() {
-//        Process process = null;
-//        DataOutputStream os = null;
-//
-//        try {
-//            process = Runtime.getRuntime().exec("su");
-//            os = new DataOutputStream(process.getOutputStream());
-//            os.writeBytes("mount -o remount,rw -t yaffs2 /dev/block/mtdblock4 /system\n");
-//            os.writeBytes("cp -f /system/build.prop " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak\n");
-//            os.writeBytes("exit\n");
-//            os.flush();
-//            process.waitFor();
-//        } catch (Exception e) {
-//            Log.e("WBP", "backup Error1: " + e.getMessage());
-//        } finally {
-//            try {
-//                if (os != null) {
-//                    os.close();
-//                }
-//                process.destroy();
-//            } catch (Exception e) {
-//                Log.e("WBP", "backup Error2: " + e.getMessage());
-//            }
-//        }
-//
-//        Log.d("WBP", "build.prop Backup at " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak");
-//    }
-//
-//    public void restore() {
-//        Process process = null;
-//        DataOutputStream os = null;
-//
-//        try {
-//            process = Runtime.getRuntime().exec("su");
-//            os = new DataOutputStream(process.getOutputStream());
-//            os.writeBytes("mount -o remount,rw -t yaffs2 /dev/block/mtdblock4 /system\n");
-//            os.writeBytes("mv -f /system/build.prop /system/build.prop.bak\n");
-//            os.writeBytes("busybox cp -f " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak /system/build.prop\n");
-//            os.writeBytes("chmod 644 /system/build.prop\n");
-//            //os.writeBytes("mount -o remount,ro -t yaffs2 /dev/block/mtdblock4 /system\n");
-//            os.writeBytes("exit\n");
-//            os.flush();
-//            process.waitFor();
-//        } catch (Exception e) {
-//            Log.e("WBP", "restore Error1: " + e.getMessage());
-//        } finally {
-//            try {
-//                if (os != null) {
-//                    os.close();
-//                }
-//                process.destroy();
-//            } catch (Exception e) {
-//                Log.e("WBP", "restore Error2: " + e.getMessage());
-//            }
-//        }
-//
-//        Log.d("WBP", "build.prop Restored from " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak");
-//    }
-//
-//    private boolean runRootCommand(String command) {
-//        Process process = null;
-//        DataOutputStream os = null;
-//
-//        try {
-//            process = Runtime.getRuntime().exec("su");
-//            os = new DataOutputStream(process.getOutputStream());
-//            os.writeBytes(command+"\n");
-//            os.writeBytes("exit\n");
-//            os.flush();
-//            process.waitFor();
-//        } catch (Exception e) {
-//            Log.e("WBP", "runRootCommand Error1: " + e.getMessage());
-//            return false;
-//        } finally {
-//            try {
-//                if (os != null) {
-//                    os.close();
-//                }
-//                process.destroy();
-//            } catch (Exception e) {
-//                Log.e("WBP", "runRootCommand Error2: " + e.getMessage());
-//            }
-//        }
-//        return true;
-//    }
 }

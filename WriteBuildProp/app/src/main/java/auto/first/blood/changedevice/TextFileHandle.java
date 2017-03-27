@@ -9,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.List;
  */
 
 public class TextFileHandle {
-    public static void writeToFile(List<String> lines, String fileName, Context context) {
+    public static void writeToFile(List<String> lines, String fileName) {
         try {
             File tmpFile = new File(fileName);
             FileWriter fw = new FileWriter(tmpFile);
@@ -34,7 +36,7 @@ public class TextFileHandle {
         }
     }
 
-    public static List<String> readFromFile(String fileName, Context context) {
+    public static List<String> readFromFile(String fileName) {
 
         List<String> lines = new ArrayList<>();
 
@@ -61,5 +63,36 @@ public class TextFileHandle {
         }
 
         return lines;
+    }
+
+    public static String readALineInFile(int lineIndex, InputStream inputStream) {
+        String line = "";
+
+        try {
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                bufferedReader.readLine();
+                int count = 0;
+                while ( (line = bufferedReader.readLine()) != null ) {
+                    if(count == lineIndex) break;
+                    count++;
+                }
+
+                Log.d("WBP", "lineIndex = count: " + count + " ; " + lineIndex);
+
+                inputStream.close();
+            }
+        }
+        catch (FileNotFoundException e) {
+            Log.e("WBP", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("WBP", "Can not read file: " + e.toString());
+        } catch (Exception e) {
+            Log.e("WBP", "Exception: " + e.toString());
+        }
+
+        return line;
     }
 }
